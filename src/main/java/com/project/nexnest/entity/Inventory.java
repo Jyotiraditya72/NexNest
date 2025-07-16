@@ -1,8 +1,8 @@
 package com.project.nexnest.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.antlr.v4.runtime.misc.LogManager;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -14,6 +14,11 @@ import java.time.LocalDateTime;
       name="unique_hotel_name_date",
       columnNames = { "hotel_id","room_id","date"}
 ))
+@Builder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Inventory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -57,8 +62,8 @@ public class Inventory {
     private LocalDateTime updatedAt;
 
 
-
-
-
-
 }
+
+
+
+

@@ -45,4 +45,19 @@ public class Room {
 
     @Column(nullable = false)
     private boolean active;
+
+    public void setHotel(Hotel hotel) {
+    }
+
+    public Hotel getHotel() {
+        return null;
+    }
+
+    public BigDecimal getBasePrice() {
+        return null;
+    }
+
+    public Integer getTotalCount() {
+        return null;
+    }
 }
