@@ -53,10 +53,6 @@ public class HotelServiceImpl implements HotelService {
         hotelRepository.deleteById(hotelId);
     }
 
-    @Override
-    public ResponseEntity<Object> activateHotel(long hotelId) {
-        return null;
-    }
 
 
     @Override
@@ -67,9 +63,9 @@ public class HotelServiceImpl implements HotelService {
      hotel.setActive(true);
         hotelRepository.save(hotel);
 
-        for(Object room:hotel.getRooms()) {
-         inventoryService.initializeRoomForAYear((Room) room);
-     }
+        for (Room room : hotel.getRooms()) {
+            inventoryService.initializeRoomForAYear(room);
+        }
 }
 
 

@@ -13,8 +13,5 @@ HotelDto getHotelById(Long id);
 
     void deleteHotelById(Long hotelId);
 
-    ResponseEntity<Object> activateHotel(long hotelId);
-
-
     void activateHotel(Long hotelId);
 }
