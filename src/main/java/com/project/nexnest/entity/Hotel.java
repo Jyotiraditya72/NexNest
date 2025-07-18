@@ -5,7 +5,6 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
-import java.util.Collection;
 import java.util.List;
 @Entity
 @Table(name="hotel")
@@ -32,26 +31,10 @@ public class Hotel {
  private HotelContectInfo contectInfo;
 
  @Column(nullable = false)
- private Boolean active=true;
+ private Boolean active;
 
  @OneToMany(mappedBy="hotel")
  private List<Room> rooms;
 
- @ManyToOne
- private User owner;
 
- public void setActive(boolean b) {
- }
-
- public Collection<Object> getRooms() {
-  return null;
- }
-
- public String getCity() {
-  return null;
- }
-
- public boolean getActive() {
-  return false;
- }
 }
