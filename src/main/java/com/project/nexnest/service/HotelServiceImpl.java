@@ -1,6 +1,8 @@
 package com.project.nexnest.service;
 
 import com.project.nexnest.dto.HotelDto;
+import com.project.nexnest.dto.HotelInfoDto;
+import com.project.nexnest.dto.RoomDto;
 import com.project.nexnest.entity.Hotel;
 import com.project.nexnest.entity.Room;
 import com.project.nexnest.exception.ResourceNotFoundException;
@@ -13,6 +15,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.client.ResourceAccessException;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -68,7 +73,19 @@ public class HotelServiceImpl implements HotelService {
         }
 }
 
-
+    @Override
+    public HotelInfoDto getHotelInfoById(Long hotelId) {
+        Hotel hotel=hotelRepository.findById(hotelId)
+                .orElseThrow(()->new ResourceNotFoundException("Hotel not found with id: " + hotelId));
+        hotel.setActive(true);
+        List<RoomDto> rooms=hotel.getRooms()
+                .stream()
+                .map((element)->modelMapper.map(element,RoomDto.class))
+                .toList();
+        return new HotelInfoDto(modelMapper.map(hotel,HotelDto.class),rooms);
     }
+
+
+}
 
 

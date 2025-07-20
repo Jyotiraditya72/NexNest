@@ -3,13 +3,20 @@ package com.project.nexnest.entity;
 import com.project.nexnest.entity.enums.BookingStatus;
 import com.project.nexnest.entity.enums.PaymentStatus;
 import jakarta.persistence.*;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Set;
 @Entity
+@Builder
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,9 +38,9 @@ public class Booking {
     private Integer roomsCount;
 
     @Column(nullable=false)
-    private LocalDate checkin;
+    private LocalDate checkInDate;
     @Column(nullable=false)
-    private LocalDate checkout;
+    private LocalDate checkOutDate;
 
 
     @CreationTimestamp
@@ -58,5 +65,10 @@ public class Booking {
             inverseJoinColumns = @JoinColumn(name="guest_id")
     )
     private Set<Guest> guests;
+
+    @Column(nullable = false,precision = 10,scale = 2)
+    private BigDecimal amount;
+
+
 
 }

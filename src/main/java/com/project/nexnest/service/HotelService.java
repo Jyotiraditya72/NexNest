@@ -1,6 +1,7 @@
 package com.project.nexnest.service;
 
 import com.project.nexnest.dto.HotelDto;
+import com.project.nexnest.dto.HotelInfoDto;
 import org.springframework.http.ResponseEntity;
 
 public interface HotelService  {
@@ -14,4 +15,6 @@ HotelDto getHotelById(Long id);
     void deleteHotelById(Long hotelId);
 
     void activateHotel(Long hotelId);
+
+    HotelInfoDto getHotelInfoById(Long hotelId);
 }
