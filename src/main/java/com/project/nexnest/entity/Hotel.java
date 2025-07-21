@@ -1,5 +1,6 @@
 package com.project.nexnest.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
@@ -45,5 +46,6 @@ public class Hotel {
  private Boolean active;
 
  @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+@JsonIgnore
  private List<Room> rooms;
 }

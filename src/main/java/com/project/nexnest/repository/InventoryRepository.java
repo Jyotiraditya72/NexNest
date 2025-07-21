@@ -57,4 +57,6 @@ AND (i.totalCount-i.bookedCount- i.reservedCount>= :roomsCount)
             @Param("endDate") LocalDate endDate,
             @Param("roomsCount") Integer roomsCount
     );
+
+    List<Inventory> findByHotelAndDateBetween(Hotel hotel, LocalDate dateAfter, LocalDate dateBefore);
 }
