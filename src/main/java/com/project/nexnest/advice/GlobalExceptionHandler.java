@@ -1,16 +1,21 @@
 package com.project.nexnest.advice;
 
 import com.project.nexnest.exception.ResourceNotFoundException;
+import lombok.Builder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
+@Builder
 @ControllerAdvice
+@ResponseStatus(HttpStatus.BAD_REQUEST)
+@RestControllerAdvice
 public class GlobalExceptionHandler {
 
     // Handle custom ResourceNotFoundException

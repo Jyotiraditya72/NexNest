@@ -8,6 +8,7 @@ import com.project.nexnest.repository.InventoryRepository;
 import com.project.nexnest.service.HotelService;
 import com.project.nexnest.service.InventoryService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping
 @RequiredArgsConstructor
+@Slf4j
 public class HotelBrowseController {
 
     private final InventoryService inventoryService;

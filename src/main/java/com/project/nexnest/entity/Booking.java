@@ -17,6 +17,8 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
+@Table
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

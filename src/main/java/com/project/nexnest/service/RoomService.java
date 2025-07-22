@@ -1,7 +1,13 @@
 package com.project.nexnest.service;
 
 import com.project.nexnest.dto.RoomDto;
+import jakarta.transaction.Transactional;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
+@Service
+@Transactional
 
 public interface RoomService {
     RoomDto createRoom(Long hotelId, RoomDto roomDto); // Create a new room under a specific hotel

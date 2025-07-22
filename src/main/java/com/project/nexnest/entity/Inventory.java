@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 @Entity
+
 @Table(uniqueConstraints = @UniqueConstraint(
       name="unique_hotel_name_date",
       columnNames = { "hotel_id","room_id","date"}

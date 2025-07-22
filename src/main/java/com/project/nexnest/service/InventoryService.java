@@ -4,6 +4,9 @@ import com.project.nexnest.dto.HotelPriceDto;
 import com.project.nexnest.dto.HotelSearchRequest;
 import com.project.nexnest.entity.Room;
 import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Service;
+
+@Service
 
 public interface InventoryService {
 

@@ -3,7 +3,9 @@ package com.project.nexnest.service;
 import com.project.nexnest.dto.HotelDto;
 import com.project.nexnest.dto.HotelInfoDto;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface HotelService  {
 
     HotelDto createNewHotel(HotelDto hotelDto);
